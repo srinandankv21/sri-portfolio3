@@ -76,15 +76,12 @@ if uploaded_file is not None:
                 all_labels = labels  # Save the final labels after the last iteration
                 centroids = new_centroids(data_normalized, labels, k)
                 fig = plot_clusters(data_normalized, labels, centroids)
-                images.append(fig)
+                st.pyplot(fig)
                 iteration += 1
             
-            # Toggle between iterations using radio button
-            iteration_selected = st.radio("Select Iteration to View", range(1, max_iterations + 1))
+           
             
-            # Display the corresponding image
-            st.pyplot(images[iteration_selected - 1])
-
+            
             # Show final clustered data with cluster labels
             if all_labels is not None:
                 st.subheader('Clustered Data with Labels')
