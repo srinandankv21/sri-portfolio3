@@ -71,7 +71,7 @@ if uploaded_file is not None:
     st.title('Centroids Data')
     st.write(centroids)
     st.title('Clustered data')
-    st.write(data)
+    st.write(players)
 
 else:
     st.write("Please upload a CSV file to proceed.")
