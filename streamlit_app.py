@@ -68,7 +68,10 @@ if uploaded_file is not None:
         st.write(f"Iteration {iteration}")
         plot_clusters(data, labels, centroids, iteration)
         iteration += 1
+    st.title('Centroids Data')
     st.write(centroids)
+    st.title('Clustered data')
+    st.write(data)
 
 else:
     st.write("Please upload a CSV file to proceed.")
