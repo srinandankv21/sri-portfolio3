@@ -75,6 +75,7 @@ if uploaded_file is not None:
                 labels = get_labels(data_normalized, centroids)
                 all_labels = labels  # Save the final labels after the last iteration
                 centroids = new_centroids(data_normalized, labels, k)
+                st.write(f"Iteration {iteration}")
                 fig = plot_clusters(data_normalized, labels, centroids)
                 st.pyplot(fig)
                 iteration += 1
