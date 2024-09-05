@@ -20,7 +20,9 @@ if uploaded_file is not None:
     # Drop rows with missing values in the selected features
     players = players.dropna(subset=features)
     data = players[features.copy()]
-    
+
+    st.write(data.head())
+    st.write(data.describe())
     # Normalize the data between 1 and 10
     data = ((data - data.min()) / (data.max() - data.min())) * 9 + 1
     
@@ -66,6 +68,7 @@ if uploaded_file is not None:
         st.write(f"Iteration {iteration}")
         plot_clusters(data, labels, centroids, iteration)
         iteration += 1
+    st.write(centroids)
 
 else:
     st.write("Please upload a CSV file to proceed.")
